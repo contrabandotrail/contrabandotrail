@@ -87,6 +87,17 @@
       background-color: rgb(0, 255, 30);
       /* Sobrescreve o verde do Bootstrap */
     }
+      .custom-image {
+    width: 240%;
+    aspect-ratio: 16 / 9; /* Define proporção (exemplo: 16:9) */
+    overflow: hidden;
+  }
+
+  .custom-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Corta a imagem proporcionalmente */
+  }
   </style>
 
 </head>
@@ -152,13 +163,14 @@
 
   <section class="cid-sMb4IPNHmc" id="image1-2">
     <figure class="mbr-figure">
-      <div class="image-block" style="width: 66%; position: relative;">
+      <div class="image-block" style="width: 240%; height: auto; max-height: 500px; overflow: hidden; position: relative;">
         <img
-          src="assets/images/DALL·E 2025-01-22 18.14.13 - A stunning artistic landscape featuring mountainous terrain intertwined with trail running elements. The image showcases rugged mountain paths with ru.webp"
-          width="1400" alt="Mobirise" title="">
+          src="assets/images/teste2.jpg"
+          width="1400" alt="Mobirise" title="" style="height: auto; max-height: 700px; object-fit: cover;">
       </div>
     </figure>
   </section>
+  <!-- 
   <!-- 
   <div class="container mb-5" style="font-family: 'Roboto', sans-serif; margin-top: -10px;">
     <div class="row align-center">
@@ -215,11 +227,9 @@
             É uma aldeia raiana, muito próxima de Espanha (a 2 km do Castro de Alcañices, 25 km de Alcañices e 45 km de Zamora).
             Com o passar dos anos, as trocas comerciais com Espanha foram-se esvanecendo, mas na história ficaram as aventuras dos contrabandistas, bem como as taxas que se pagavam no mercado transfronteiriço. Daí surgiu o nome deste Evento, em homenagem aos antepassados desta povoação.
             Os percursos que constituem as provas aliam troços com dureza relativa, complexidade técnica e beleza natural indiscritível.
-            
           </p>
-
           <p>
-            A caminhada, de caráter recreativo e lúdico, terá a distância aproximada de 12 km, em trilhos e caminhos de
+            A caminhada, de caráter recreativo e lúdico, terá a distância aproximada de 10 km, em trilhos e caminhos de
             terra batida, pelas paisagens envolventes às Arribas do Douro Internacional. Na caminhada existem uns
             trilhos, com alguma inclinação, onde as pessoas terão que caminhar em fila e com toda a precaução.
 
@@ -358,13 +368,13 @@
                 </tr>
                 <tr>
                   <td>🕘9:00</td>
-                  <td>M/F</td>
+                  <td>Trail 15km</td>
                   <td >25€</td>
                 </tr>
                 <tr>
                   <td>🕤9:30</td>
                   <td>Caminhada</td>
-                  <td >20€</td>
+                  <td>20€</td>
                 </tr>
               </tbody>
             </table>
@@ -374,7 +384,7 @@
     </section>
 
     
-    <section class="mbr-section contacts3 cid-sPcMrNzpg3" id="contacts3-2z">
+    <section class="mbr-section contacts3 cid-sPcMrNzpg3" id="contacts3-2z" style="padding-top: 10px; padding-bottom: 10px;">
       <div class="container">
         <div class="row">
           <!-- Title -->
@@ -389,16 +399,18 @@
             <div class="b-info b-adress">
               <h5 class="align-left mbr-fonts-style display-5">Morada:</h5>
               <p class="mbr-text align-left mbr-fonts-style display-7">
-                Rua: <br>
-                Local: <br>
-                Código Postal:
+                Rua: Loteamento da Vinha, Lote 7, R/C Esq<br>
+                Local: Miranda do Douro <br>
+                Código Postal: 5210-144 
               </p>
             </div>
             <!-- Phone -->
             <div class="b-info b-phone" style="margin-top: 20px;">
               <h5 class="align-left mbr-fonts-style display-5">Telemóvel:</h5>
               <p class="mbr-text align-left mbr-fonts-style display-7">
-                xxx xxx xxx
+                927 808 279
+                <br>
+                960 040 308
               </p>
             </div>
             <!-- Email -->
