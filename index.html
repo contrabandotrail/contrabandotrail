@@ -270,11 +270,11 @@
       const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
       const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+   
 
       // Atualiza o HTML com os valores
       document.getElementById("countdown").innerHTML =
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        `${days}d ${hours}h ${minutes}m`;
     } else {
       // Caso o tempo termine
       document.getElementById("countdown").innerHTML = "Inscrições Abertas!";
@@ -289,6 +289,7 @@
     <section class="container mb-5" style="font-family: 'Roboto', sans-serif; margin-top: -10px;">
       <div class="row align-center">
         <div class="col-12">
+          <br>
           <h2 class="align-center pb-3 mbr-fonts-style display-2" style="color:  #bdd7cb;">REGULAMENTO</h2>
         </div>
         <div class="col-12">
@@ -312,6 +313,7 @@
           <a href="https://runvasport.es/" target="_blank" class="btn btn-primary" role="button">🏃‍♂️ Vem Correr</a>
         </div>
       </div>
+      <br>
       </div>
      </section>
     <section class="mbr-section content4 cid-sMyx2cmF8V" id="content4-n">
@@ -377,7 +379,7 @@
     <br>
     <br>
     <section class="container mb-5" style="font-family: 'Roboto', sans-serif; margin-top: -10px;" id="content4-p">
-
+      <br>
       <h2 class="align-center pb-3 mbr-fonts-style display-2" style="color: #bdd7cb;">Tabela de Preços </h2>
     
       <div class="row justify-content-center" style="color: #bdd7cb;">
