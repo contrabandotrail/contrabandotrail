@@ -104,77 +104,61 @@
       /* Sobrescreve o verde do Bootstrap */
     }
 
-    /* Container do carrossel */
-    .opinions-carousel-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      width: 100%;
-      position: relative;
-    }
+    /* Contêiner do carrossel responsivo */
+.opinions-carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
 
-    /* Carrossel de opiniões */
-    .opinions-carousel {
-      display: flex;
-      gap: 15px;
-      padding: 10px;
-      white-space: nowrap;
-      width: 100%;
-      animation: scroll 40s linear infinite;
-    }
+/* Carrossel de opiniões - agora permite deslizar no mobile */
+.opinions-carousel {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: auto; /* Permite rolagem horizontal */
+    scroll-behavior: smooth; /* Suaviza a rolagem */
+    -webkit-overflow-scrolling: touch; /* Permite deslizar com o dedo no mobile */
+}
 
-    /* Esconde a barra de rolagem do carrossel */
-    .opinions-carousel::-webkit-scrollbar {
-      display: none;
-    }
+/* Esconde a barra de rolagem */
+.opinions-carousel::-webkit-scrollbar {
+    display: none;
+}
 
-    /* Ajusta os cartões para garantir que o texto não saia da borda */
-    .opinions-carousel .card {
-      min-width: 300px;
-      max-width: 350px;
-      background: white;
-      border-left: 4px solid #519c8f;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-      /* Centraliza o texto */
-      flex: 0 0 auto;
-      height: auto;
-      /* Ajusta a altura conforme necessário */
-      word-wrap: break-word;
-      /* Garante que palavras longas quebrem corretamente */
-      overflow-wrap: break-word;
-      /* Garante que todo o texto fique dentro */
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+/* Estilização dos cartões para manter proporção */
+.opinions-carousel .card {
+    min-width: 300px;
+    max-width: 350px;
+    background: white;
+    border-left: 4px solid #519c8f;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 0 0 auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-    /* Garante que o texto das opiniões fique dentro da caixa */
-    .opinions-carousel .card p {
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      white-space: normal;
-      max-height: 100px;
-      /* Define uma altura máxima para evitar texto saindo */
-      overflow-y: auto;
-      /* Adiciona rolagem vertical se necessário */
-      text-align: left;
-      /* Mantém alinhado corretamente */
-    }
+/* Corrige texto longo para não sair do cartão */
+.opinions-carousel .card p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-height: 100px; /* Define uma altura máxima */
+    overflow-y: auto; /* Adiciona rolagem interna se necessário */
+    text-align: left;
+}
 
-    /* Animação para mover os itens automaticamente */
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-300%);
-      }
-    }
   </style>
 
 </head>
@@ -681,69 +665,120 @@
   const database = getDatabase(app);
 
   // Captura o formulário e adiciona evento de submissão
-  document.getElementById("opinion-form").addEventListener("submit", function (event) {
-    event.preventDefault();
+  document.getElementById("opinion-form").addEventListener("submit", function(event) {
+      event.preventDefault();
 
-    var opinion = document.getElementById("opinion").value;
+      var opinion = document.getElementById("opinion").value;
 
-    if (opinion) {
-      const opinionsRef = ref(database, 'opinions');
-      const newOpinionRef = push(opinionsRef);
+      if (opinion) {
+          const opinionsRef = ref(database, 'opinions');
+          const newOpinionRef = push(opinionsRef);
 
-      set(newOpinionRef, {
-        opinion: opinion,
-        timestamp: new Date().toISOString()
-      }).then(() => {
-        alert("Opinião enviada com sucesso!");
-        document.getElementById("opinion").value = "";
-        loadOpinions();
-      }).catch((error) => {
-        console.error("Erro ao enviar opinião: ", error);
-      });
-    }
+          set(newOpinionRef, {
+              opinion: opinion,
+              timestamp: new Date().toISOString()
+          }).then(() => {
+              alert("Opinião enviada com sucesso!");
+              document.getElementById("opinion").value = "";
+              loadOpinions();
+          }).catch((error) => {
+              console.error("Erro ao enviar opinião: ", error);
+          });
+      }
   });
 
   // Função para carregar todas as opiniões do Firebase e mostrar no carrossel automático
   function loadOpinions() {
-    const opinionsContainer = document.getElementById("opinions-container");
-    opinionsContainer.innerHTML = "";
-
-    const opinionsRef = ref(database, 'opinions');
-
-    onValue(opinionsRef, (snapshot) => {
+      const opinionsContainer = document.getElementById("opinions-container");
       opinionsContainer.innerHTML = "";
 
-      if (snapshot.exists()) {
-        let opinionsArray = [];
-        snapshot.forEach((childSnapshot) => {
-          opinionsArray.push(childSnapshot.val());
-        });
+      const opinionsRef = ref(database, 'opinions');
 
-        // Ordenar por data mais recente
-        opinionsArray.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      onValue(opinionsRef, (snapshot) => {
+          opinionsContainer.innerHTML = "";
 
-        // Adicionar todas as opiniões ao carrossel
-        opinionsArray.forEach((data) => {
-          var newOpinion = document.createElement("div");
-          newOpinion.classList.add("card");
-          newOpinion.innerHTML = `
+          if (snapshot.exists()) {
+              let opinionsArray = [];
+              snapshot.forEach((childSnapshot) => {
+                  opinionsArray.push(childSnapshot.val());
+              });
+
+              // Ordenar por data mais recente
+              opinionsArray.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+              // Adicionar todas as opiniões ao carrossel
+              opinionsArray.forEach((data) => {
+                  var newOpinion = document.createElement("div");
+                  newOpinion.classList.add("card");
+                  newOpinion.innerHTML = `
                       <p class="card-text">${data.opinion}</p>
                       <small class="text-muted">${new Date(data.timestamp).toLocaleString()}</small>
                   `;
 
-          opinionsContainer.appendChild(newOpinion);
-        });
+                  opinionsContainer.appendChild(newOpinion);
+              });
 
-        // Duplicar os elementos para criar efeito infinito
-        opinionsContainer.innerHTML += opinionsContainer.innerHTML;
-      } else {
-        opinionsContainer.innerHTML = "<p class='text-center text-muted'>Nenhuma opinião ainda.</p>";
-      }
-    }, (error) => {
-      console.error("Erro ao carregar opiniões:", error);
-    });
+              // Duplicar os elementos para criar efeito infinito
+              opinionsContainer.innerHTML += opinionsContainer.innerHTML;
+          } else {
+              opinionsContainer.innerHTML = "<p class='text-center text-muted'>Nenhuma opinião ainda.</p>";
+          }
+      }, (error) => {
+          console.error("Erro ao carregar opiniões:", error);
+      });
   }
 
   // Carregar opiniões ao abrir a página
   loadOpinions();
+
+  // Adiciona suporte a Swipe no Mobile
+  document.addEventListener("DOMContentLoaded", function () {
+      const carousel = document.querySelector(".opinions-carousel");
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      // Quando o toque começa
+      carousel.addEventListener("mousedown", (e) => {
+          isDown = true;
+          startX = e.pageX - carousel.offsetLeft;
+          scrollLeft = carousel.scrollLeft;
+      });
+
+      // Quando o toque termina
+      carousel.addEventListener("mouseleave", () => {
+          isDown = false;
+      });
+
+      carousel.addEventListener("mouseup", () => {
+          isDown = false;
+      });
+
+      // Quando o toque move
+      carousel.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - carousel.offsetLeft;
+          const walk = (x - startX) * 2; // Velocidade do scroll
+          carousel.scrollLeft = scrollLeft - walk;
+      });
+
+      // Suporte para mobile (touch)
+      carousel.addEventListener("touchstart", (e) => {
+          isDown = true;
+          startX = e.touches[0].pageX - carousel.offsetLeft;
+          scrollLeft = carousel.scrollLeft;
+      });
+
+      carousel.addEventListener("touchend", () => {
+          isDown = false;
+      });
+
+      carousel.addEventListener("touchmove", (e) => {
+          if (!isDown) return;
+          const x = e.touches[0].pageX - carousel.offsetLeft;
+          const walk = (x - startX) * 2;
+          carousel.scrollLeft = scrollLeft - walk;
+      });
+  });
 </script>
