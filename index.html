@@ -105,60 +105,64 @@
     }
 
     /* Contêiner do carrossel responsivo */
-.opinions-carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-}
+    .opinions-carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
 
-/* Carrossel de opiniões - agora permite deslizar no mobile */
-.opinions-carousel {
-    display: flex;
-    gap: 15px;
-    padding: 10px;
-    white-space: nowrap;
-    width: 100%;
-    overflow-x: auto; /* Permite rolagem horizontal */
-    scroll-behavior: smooth; /* Suaviza a rolagem */
-    -webkit-overflow-scrolling: touch; /* Permite deslizar com o dedo no mobile */
-}
+    /* Carrossel de opiniões - agora permite deslizar no mobile */
+    .opinions-carousel {
+      display: flex;
+      gap: 15px;
+      padding: 10px;
+      white-space: nowrap;
+      width: 100%;
+      overflow-x: auto;
+      /* Permite rolagem horizontal */
+      scroll-behavior: smooth;
+      /* Suaviza a rolagem */
+      -webkit-overflow-scrolling: touch;
+      /* Permite deslizar com o dedo no mobile */
+    }
 
-/* Esconde a barra de rolagem */
-.opinions-carousel::-webkit-scrollbar {
-    display: none;
-}
+    /* Esconde a barra de rolagem */
+    .opinions-carousel::-webkit-scrollbar {
+      display: none;
+    }
 
-/* Estilização dos cartões para manter proporção */
-.opinions-carousel .card {
-    min-width: 300px;
-    max-width: 350px;
-    background: white;
-    border-left: 4px solid #519c8f;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    flex: 0 0 auto;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+    /* Estilização dos cartões para manter proporção */
+    .opinions-carousel .card {
+      min-width: 300px;
+      max-width: 350px;
+      background: white;
+      border-left: 4px solid #519c8f;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      flex: 0 0 auto;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-/* Corrige texto longo para não sair do cartão */
-.opinions-carousel .card p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    max-height: 100px; /* Define uma altura máxima */
-    overflow-y: auto; /* Adiciona rolagem interna se necessário */
-    text-align: left;
-}
-
+    /* Corrige texto longo para não sair do cartão */
+    .opinions-carousel .card p {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+      max-height: 100px;
+      /* Define uma altura máxima */
+      overflow-y: auto;
+      /* Adiciona rolagem interna se necessário */
+      text-align: left;
+    }
   </style>
 
 </head>
@@ -497,7 +501,86 @@
           </div>
         </div>
       </div>
-    </section>
+      <div class="text-center my-4">
+        <button class="btn btn-secondary" onclick="toggleLista()" style="background-color: #519c8f; border-color: #519c8f;">
+          Lista de Participantes
+        </button>
+      </div>
+    
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div id="listaParticipantes" class="d-none justify-content-center flex-wrap" style="display:flex; color: #519c8f;">
+            <div class="d-flex flex-wrap justify-content-center">
+              <div class="d-flex justify-content-center">
+                <div class="p-3 m-2" style="border: 1px solid #519c8f; width: 220px;">
+                  <strong>Nº 1 a 10</strong>
+                  <ul class="list-unstyled">
+                    <li> Marta Fernandes</li>
+                    <li> Ricardo Domingues</li>
+                    <li> Elisa Fernandes</li>
+                    <li> Cláudia Nascimento</li>
+                    <li> Vítor Costa</li>
+                    <li> Ana Cecília Mouro Neto</li>
+                    <li> Gil Rafael</li>
+                    <li> Nadia Sabino</li>
+                    <li> Paula Anjos</li>
+                    <li> Elisabete Pereira</li>
+                  </ul>
+                </div>
+                <div class="p-3 m-2" style="border: 1px solid #519c8f; width: 220px;">
+                  <strong>Nº 11 a 20</strong>
+                  <ul class="list-unstyled">
+                    <li> Ana Afonso</li>
+                    <li> Maria Augusta Vieira de Castro</li>
+                    <li> Daniel João Augusto</li>
+                    <li> Maria da Luz Preto Fernandes Marcos</li>
+                    <li> António Santos Marcos</li>
+                    <li> Diogo Rodrigues</li>
+                    <li> Guiomar Vale</li>
+                    <li> Sara Gonçalves</li>
+                    <li> Igor Rosete</li>
+                    <li> Mª Otilia Gonçalves</li>
+                  </ul>
+                </div>
+                <div class="p-3 m-2" style="border: 1px solid #519c8f; width: 220px;">
+                  <strong>Nº 21 a 30</strong>
+                  <ul class="list-unstyled">
+                    <li> Abdiel Gonçalves</li>
+                    <li> Ana Sofia Alonso Alves</li>
+                    <li> Catarina das Dores Vale</li>
+                    <li> Henrique Sousa</li>
+                    <li> Rosária Cardoso</li>
+                    <li> Tomás Sousa</li>
+                    <li> Maria Pimentel</li>
+                    <li> João Afonso</li>
+                    <li> Augusta Pires</li>
+                    <li> Adriana de Oliveira</li>
+                  </ul>
+                </div>
+                <div class="p-3 m-2" style="border: 1px solid #519c8f; width: 220px;">
+                  <strong>Nº 31 a 39</strong>
+                  <ul class="list-unstyled">
+                    <li> Sandra Mendes</li>
+                    <li> Ana Cordeiro</li>
+                    <li> Nikola</li>
+                    <li> Fernanda Cordeiro</li>
+                    <li> Orlando Ferreira</li>
+                    <li> Luísa Rodrigues</li>
+                    <li> Helder Rodrigues</li>
+                    <li> Idalina Rodrigues</li>
+                  </ul>
+                </div>
+              </div>
+              
+    
+      <script>
+        function toggleLista() {
+          var lista = document.getElementById('listaParticipantes');
+          lista.classList.toggle('d-none');
+        }
+      </script>
+     </section>
+
     <section class="mbr-section content4 cid-sMyx2cmF8V" id="content4-n">
       <div class="container">
         <div class="media-container-row justify-content-center text-center">
@@ -509,7 +592,7 @@
                   required></textarea>
               </div>
 
-              <button class="btn btn-primary" role="button"
+              <button class="btn btn-primary" role="button" class="col-12"
                 style="background-color: #519c8f; border-color: #519c8f;">Enviar Comentário</button>
             </form>
 
@@ -665,67 +748,67 @@
   const database = getDatabase(app);
 
   // Captura o formulário e adiciona evento de submissão
-  document.getElementById("opinion-form").addEventListener("submit", function(event) {
-      event.preventDefault();
+  document.getElementById("opinion-form").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      var opinion = document.getElementById("opinion").value;
+    var opinion = document.getElementById("opinion").value;
 
-      if (opinion) {
-          const opinionsRef = ref(database, 'opinions');
-          const newOpinionRef = push(opinionsRef);
+    if (opinion) {
+      const opinionsRef = ref(database, 'opinions');
+      const newOpinionRef = push(opinionsRef);
 
-          set(newOpinionRef, {
-              opinion: opinion,
-              timestamp: new Date().toISOString()
-          }).then(() => {
-              alert("Opinião enviada com sucesso!");
-              document.getElementById("opinion").value = "";
-              loadOpinions();
-          }).catch((error) => {
-              console.error("Erro ao enviar opinião: ", error);
-          });
-      }
+      set(newOpinionRef, {
+        opinion: opinion,
+        timestamp: new Date().toISOString()
+      }).then(() => {
+        alert("Opinião enviada com sucesso!");
+        document.getElementById("opinion").value = "";
+        loadOpinions();
+      }).catch((error) => {
+        console.error("Erro ao enviar opinião: ", error);
+      });
+    }
   });
 
   // Função para carregar todas as opiniões do Firebase e mostrar no carrossel automático
   function loadOpinions() {
-      const opinionsContainer = document.getElementById("opinions-container");
+    const opinionsContainer = document.getElementById("opinions-container");
+    opinionsContainer.innerHTML = "";
+
+    const opinionsRef = ref(database, 'opinions');
+
+    onValue(opinionsRef, (snapshot) => {
       opinionsContainer.innerHTML = "";
 
-      const opinionsRef = ref(database, 'opinions');
+      if (snapshot.exists()) {
+        let opinionsArray = [];
+        snapshot.forEach((childSnapshot) => {
+          opinionsArray.push(childSnapshot.val());
+        });
 
-      onValue(opinionsRef, (snapshot) => {
-          opinionsContainer.innerHTML = "";
+        // Ordenar por data mais recente
+        opinionsArray.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
-          if (snapshot.exists()) {
-              let opinionsArray = [];
-              snapshot.forEach((childSnapshot) => {
-                  opinionsArray.push(childSnapshot.val());
-              });
-
-              // Ordenar por data mais recente
-              opinionsArray.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-
-              // Adicionar todas as opiniões ao carrossel
-              opinionsArray.forEach((data) => {
-                  var newOpinion = document.createElement("div");
-                  newOpinion.classList.add("card");
-                  newOpinion.innerHTML = `
+        // Adicionar todas as opiniões ao carrossel
+        opinionsArray.forEach((data) => {
+          var newOpinion = document.createElement("div");
+          newOpinion.classList.add("card");
+          newOpinion.innerHTML = `
                       <p class="card-text">${data.opinion}</p>
                       <small class="text-muted">${new Date(data.timestamp).toLocaleString()}</small>
                   `;
 
-                  opinionsContainer.appendChild(newOpinion);
-              });
+          opinionsContainer.appendChild(newOpinion);
+        });
 
-              // Duplicar os elementos para criar efeito infinito
-              opinionsContainer.innerHTML += opinionsContainer.innerHTML;
-          } else {
-              opinionsContainer.innerHTML = "<p class='text-center text-muted'>Nenhuma opinião ainda.</p>";
-          }
-      }, (error) => {
-          console.error("Erro ao carregar opiniões:", error);
-      });
+        // Duplicar os elementos para criar efeito infinito
+        opinionsContainer.innerHTML += opinionsContainer.innerHTML;
+      } else {
+        opinionsContainer.innerHTML = "<p class='text-center text-muted'>Nenhuma opinião ainda.</p>";
+      }
+    }, (error) => {
+      console.error("Erro ao carregar opiniões:", error);
+    });
   }
 
   // Carregar opiniões ao abrir a página
@@ -733,52 +816,52 @@
 
   // Adiciona suporte a Swipe no Mobile
   document.addEventListener("DOMContentLoaded", function () {
-      const carousel = document.querySelector(".opinions-carousel");
-      let isDown = false;
-      let startX;
-      let scrollLeft;
+    const carousel = document.querySelector(".opinions-carousel");
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-      // Quando o toque começa
-      carousel.addEventListener("mousedown", (e) => {
-          isDown = true;
-          startX = e.pageX - carousel.offsetLeft;
-          scrollLeft = carousel.scrollLeft;
-      });
+    // Quando o toque começa
+    carousel.addEventListener("mousedown", (e) => {
+      isDown = true;
+      startX = e.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    });
 
-      // Quando o toque termina
-      carousel.addEventListener("mouseleave", () => {
-          isDown = false;
-      });
+    // Quando o toque termina
+    carousel.addEventListener("mouseleave", () => {
+      isDown = false;
+    });
 
-      carousel.addEventListener("mouseup", () => {
-          isDown = false;
-      });
+    carousel.addEventListener("mouseup", () => {
+      isDown = false;
+    });
 
-      // Quando o toque move
-      carousel.addEventListener("mousemove", (e) => {
-          if (!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - carousel.offsetLeft;
-          const walk = (x - startX) * 2; // Velocidade do scroll
-          carousel.scrollLeft = scrollLeft - walk;
-      });
+    // Quando o toque move
+    carousel.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2; // Velocidade do scroll
+      carousel.scrollLeft = scrollLeft - walk;
+    });
 
-      // Suporte para mobile (touch)
-      carousel.addEventListener("touchstart", (e) => {
-          isDown = true;
-          startX = e.touches[0].pageX - carousel.offsetLeft;
-          scrollLeft = carousel.scrollLeft;
-      });
+    // Suporte para mobile (touch)
+    carousel.addEventListener("touchstart", (e) => {
+      isDown = true;
+      startX = e.touches[0].pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    });
 
-      carousel.addEventListener("touchend", () => {
-          isDown = false;
-      });
+    carousel.addEventListener("touchend", () => {
+      isDown = false;
+    });
 
-      carousel.addEventListener("touchmove", (e) => {
-          if (!isDown) return;
-          const x = e.touches[0].pageX - carousel.offsetLeft;
-          const walk = (x - startX) * 2;
-          carousel.scrollLeft = scrollLeft - walk;
-      });
+    carousel.addEventListener("touchmove", (e) => {
+      if (!isDown) return;
+      const x = e.touches[0].pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2;
+      carousel.scrollLeft = scrollLeft - walk;
+    });
   });
 </script>
