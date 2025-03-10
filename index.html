@@ -501,85 +501,93 @@
           </div>
         </div>
       </div>
-      <div class="text-center my-4">
-        <button class="btn btn-secondary" onclick="toggleLista()" style="background-color: #519c8f; border-color: #519c8f;">
-          Lista de Participantes
-        </button>
-      </div>
     
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <div id="listaParticipantes" class="d-none justify-content-center flex-wrap" style="display:flex; color: #519c8f;">
-            <div class="d-flex flex-wrap justify-content-center">
-              <div class="d-flex justify-content-center">
-                <div class="p-3 m-2" style="border: 1px solid #519c8f; width: 220px;">
-                  <strong>Nº 1 a 10</strong>
-                  <ul class="list-unstyled">
-                    <li> Marta Fernandes</li>
-                    <li> Ricardo Domingues</li>
-                    <li> Elisa Fernandes</li>
-                    <li> Cláudia Nascimento</li>
-                    <li> Vítor Costa</li>
-                    <li> Ana Cecília Mouro Neto</li>
-                    <li> Gil Rafael</li>
-                    <li> Nadia Sabino</li>
-                    <li> Paula Anjos</li>
-                    <li> Elisabete Pereira</li>
-                  </ul>
-                </div>
-                <div class="p-3 m-2" style="border: 1px solid #519c8f; width: 220px;">
-                  <strong>Nº 11 a 20</strong>
-                  <ul class="list-unstyled">
-                    <li> Ana Afonso</li>
-                    <li> Maria Augusta Vieira de Castro</li>
-                    <li> Daniel João Augusto</li>
-                    <li> Maria da Luz Preto Fernandes Marcos</li>
-                    <li> António Santos Marcos</li>
-                    <li> Diogo Rodrigues</li>
-                    <li> Guiomar Vale</li>
-                    <li> Sara Gonçalves</li>
-                    <li> Igor Rosete</li>
-                    <li> Mª Otilia Gonçalves</li>
-                  </ul>
-                </div>
-                <div class="p-3 m-2" style="border: 1px solid #519c8f; width: 220px;">
-                  <strong>Nº 21 a 30</strong>
-                  <ul class="list-unstyled">
-                    <li> Abdiel Gonçalves</li>
-                    <li> Ana Sofia Alonso Alves</li>
-                    <li> Catarina das Dores Vale</li>
-                    <li> Henrique Sousa</li>
-                    <li> Rosária Cardoso</li>
-                    <li> Tomás Sousa</li>
-                    <li> Maria Pimentel</li>
-                    <li> João Afonso</li>
-                    <li> Augusta Pires</li>
-                    <li> Adriana de Oliveira</li>
-                  </ul>
-                </div>
-                <div class="p-3 m-2" style="border: 1px solid #519c8f; width: 220px;">
-                  <strong>Nº 31 a 39</strong>
-                  <ul class="list-unstyled">
-                    <li> Sandra Mendes</li>
-                    <li> Ana Cordeiro</li>
-                    <li> Nikola</li>
-                    <li> Fernanda Cordeiro</li>
-                    <li> Orlando Ferreira</li>
-                    <li> Luísa Rodrigues</li>
-                    <li> Helder Rodrigues</li>
-                    <li> Idalina Rodrigues</li>
-                  </ul>
-                </div>
-              </div>
-              
-    
-      <script>
-        function toggleLista() {
-          var lista = document.getElementById('listaParticipantes');
-          lista.classList.toggle('d-none');
-        }
-      </script>
-     </section>
+     
+        <div class="text-center my-4">
+          <button class="btn btn-secondary" onclick="toggleLista()" style="background-color: #519c8f; border-color: #519c8f;">
+            Lista de Participantes
+          </button>
+        </div>
+      
+        <div id="listaParticipantes" class="row d-none justify-content-center" style="color: #519c8f;">
+          <div class="col-md-3 col-sm-6 p-3">
+            <div class="border p-3 h-100">
+              <strong>Nº 1 a 10</strong>
+              <ul class="list-unstyled">
+                <li>Marta Fernandes</li>
+                <li>Ricardo Domingues</li>
+                <li>Elisa Fernandes</li>
+                <li>Cláudia Nascimento</li>
+                <li>Vítor Costa</li>
+                <li>Ana Cecília Mouro Neto</li>
+                <li>Gil Rafael</li>
+                <li>Nadia Sabino</li>
+                <li>Paula Anjos</li>
+                <li>Elisabete Pereira</li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="col-md-3 col-sm-6 p-3">
+            <div class="border p-3 h-100">
+              <strong>Nº 11 a 20</strong>
+              <ul class="list-unstyled">
+                <li>Ana Afonso</li>
+                <li>Maria Augusta Vieira de Castro</li>
+                <li>Daniel João Augusto</li>
+                <li>Maria da Luz Preto Fernandes Marcos</li>
+                <li>António Santos Marcos</li>
+                <li>Diogo Rodrigues</li>
+                <li>Guiomar Vale</li>
+                <li>Sara Gonçalves</li>
+                <li>Igor Rosete</li>
+                <li>Mª Otilia Gonçalves</li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="col-md-3 col-sm-6 p-3">
+            <div class="border p-3 h-100">
+              <strong>Nº 21 a 30</strong>
+              <ul class="list-unstyled">
+                <li>Abdiel Gonçalves</li>
+                <li>Ana Sofia Alonso Alves</li>
+                <li>Catarina das Dores Vale</li>
+                <li>Henrique Sousa</li>
+                <li>Rosária Cardoso</li>
+                <li>Tomás Sousa</li>
+                <li>Maria Pimentel</li>
+                <li>João Afonso</li>
+                <li>Augusta Pires</li>
+                <li>Adriana de Oliveira</li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="col-md-3 col-sm-6 p-3">
+            <div class="border p-3 h-100">
+              <strong>Nº 31 a 39</strong>
+              <ul class="list-unstyled">
+                <li>Sandra Mendes</li>
+                <li>Ana Cordeiro</li>
+                <li>Nikola</li>
+                <li>Fernanda Cordeiro</li>
+                <li>Orlando Ferreira</li>
+                <li>Luísa Rodrigues</li>
+                <li>Helder Rodrigues</li>
+                <li>Idalina Rodrigues</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        <script>
+          function toggleLista() {
+            var lista = document.getElementById('listaParticipantes');
+            lista.classList.toggle('d-none');
+          }
+        </script>
+      </section>
 
     <section class="mbr-section content4 cid-sMyx2cmF8V" id="content4-n">
       <div class="container">
