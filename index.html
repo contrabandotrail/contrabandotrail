@@ -529,6 +529,9 @@
                 <li>Nadia Sabino</li>
                 <li>Paula Anjos</li>
                 <li>Elisabete Pereira</li>
+                <li>Ana Afonso</li>
+                <li>Maria Augusta Vieira de Castro</li>
+                <li>Daniel João Augusto</li>
               </ul>
             </div>
           </div>
@@ -537,9 +540,7 @@
             <div class="border p-3 h-100">
               <strong>Listagem</strong>
               <ul class="list-unstyled">
-                <li>Ana Afonso</li>
-                <li>Maria Augusta Vieira de Castro</li>
-                <li>Daniel João Augusto</li>
+              
                 <li>Maria da Luz Preto Fernandes Marcos</li>
                 <li>António Santos Marcos</li>
                 <li>Diogo Rodrigues</li>
@@ -547,6 +548,9 @@
                 <li>Sara Gonçalves</li>
                 <li>Igor Rosete</li>
                 <li>Mª Otilia Gonçalves</li>
+                <li>Abdiel Gonçalves</li>
+                <li>Ana Sofia Alonso Alves</li>
+                <li>Catarina das Dores Vale</li>
               </ul>
             </div>
           </div>
@@ -555,9 +559,6 @@
             <div class="border p-3 h-100">
               <strong>Listagem</strong>
               <ul class="list-unstyled">
-                <li>Abdiel Gonçalves</li>
-                <li>Ana Sofia Alonso Alves</li>
-                <li>Catarina das Dores Vale</li>
                 <li>Henrique Sousa</li>
                 <li>Rosária Cardoso</li>
                 <li>Tomás Sousa</li>
@@ -565,6 +566,10 @@
                 <li>João Afonso</li>
                 <li>Augusta Pires</li>
                 <li>Adriana de Oliveira</li>
+                <li>Sandra Mendes</li>
+                <li>Ana Cordeiro</li>
+                <li>Nikola</li>
+                <li>Fernanda Cordeiro</li>
               </ul>
             </div>
           </div>
@@ -573,10 +578,6 @@
             <div class="border p-3 h-100">
               <strong>Listagem</strong>
               <ul class="list-unstyled">
-                <li>Sandra Mendes</li>
-                <li>Ana Cordeiro</li>
-                <li>Nikola</li>
-                <li>Fernanda Cordeiro</li>
                 <li>Orlando Ferreira</li>
                 <li>Luísa Rodrigues</li>
                 <li>Helder Rodrigues</li>
@@ -584,6 +585,9 @@
                 <li> Hélio Martins </li>
                 <li> Ana Guerra</li>
                 <li>Luís Miguel Gonçalves</li>
+                <li> Simão Martins </li>
+                <li>  Isabel Parreira </li>
+                <li> Luísa Parreira  </li> 
               </ul>
             </div>
           </div>
@@ -615,6 +619,7 @@
 
             <div id="opinions-list" style="margin-top: 30px;">
               <h3 style="color: #bdd1cb;">Comentários dos Visitantes</h3>
+              
 
               <!-- Contêiner do carrossel automático -->
               <div class="opinions-carousel-container">
@@ -622,8 +627,7 @@
                   <!-- As opiniões serão inseridas aqui -->
                 </div>
               </div>
-
-            </div>
+           </div>
           </div>
         </div>
       </div>
@@ -790,7 +794,7 @@
   // Função para carregar todas as opiniões do Firebase e mostrar no carrossel automático
   function loadOpinions() {
     const opinionsContainer = document.getElementById("opinions-container");
-    opinionsContainer.innerHTML = "";
+    
 
     const opinionsRef = ref(database, 'opinions');
 
@@ -830,55 +834,77 @@
 
   // Carregar opiniões ao abrir a página
   loadOpinions();
-
-  // Adiciona suporte a Swipe no Mobile
   document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.querySelector(".opinions-carousel");
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+  const carousel = document.querySelector(".opinions-carousel");
+  let isDragging = false;
+  let startX, scrollLeft, velocity = 0, raf;
 
-    // Quando o toque começa
+  const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+
+  if (!isMobile) {
+    // **PC - Navegação com Teclado e Mouse**
+    const easeScroll = () => {
+      if (Math.abs(velocity) < 0.1) return;
+      carousel.scrollLeft += velocity;
+      velocity *= 0.92; // Suavização da rolagem
+      raf = requestAnimationFrame(easeScroll);
+    };
+
     carousel.addEventListener("mousedown", (e) => {
-      isDown = true;
+      isDragging = true;
+      carousel.style.cursor = "grabbing";
       startX = e.pageX - carousel.offsetLeft;
       scrollLeft = carousel.scrollLeft;
+      velocity = 0;
+      cancelAnimationFrame(raf);
     });
 
-    // Quando o toque termina
-    carousel.addEventListener("mouseleave", () => {
-      isDown = false;
+    carousel.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      const move = (x - startX) * 1;
+      carousel.scrollLeft = scrollLeft - move;
+      velocity = move - (scrollLeft - carousel.scrollLeft);
     });
 
     carousel.addEventListener("mouseup", () => {
-      isDown = false;
+      isDragging = false;
+      carousel.style.cursor = "grab";
+      raf = requestAnimationFrame(easeScroll);
     });
 
-    // Quando o toque move
-    carousel.addEventListener("mousemove", (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - carousel.offsetLeft;
-      const walk = (x - startX) * 2; // Velocidade do scroll
-      carousel.scrollLeft = scrollLeft - walk;
-    });
+    carousel.addEventListener("mouseleave", () => isDragging = false);
 
-    // Suporte para mobile (touch)
+    // **Mover com as setas do teclado**
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        carousel.scrollBy({ left: -200, behavior: "smooth" });
+      } else if (e.key === "ArrowRight") {
+        carousel.scrollBy({ left: 200, behavior: "smooth" });
+      }
+    });
+  } else {
+    // **Mobile - Navegação por Swipe**
     carousel.addEventListener("touchstart", (e) => {
-      isDown = true;
+      isDragging = true;
       startX = e.touches[0].pageX - carousel.offsetLeft;
       scrollLeft = carousel.scrollLeft;
-    });
-
-    carousel.addEventListener("touchend", () => {
-      isDown = false;
-    });
+    }, { passive: true });
 
     carousel.addEventListener("touchmove", (e) => {
-      if (!isDown) return;
+      if (!isDragging) return;
       const x = e.touches[0].pageX - carousel.offsetLeft;
-      const walk = (x - startX) * 2;
-      carousel.scrollLeft = scrollLeft - walk;
+      const move = (x - startX) * 1.5;
+      carousel.scrollLeft = scrollLeft - move;
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", () => {
+      isDragging = false;
     });
-  });
+  }
+});
+
+
+ 
 </script>
