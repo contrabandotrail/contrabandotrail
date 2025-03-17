@@ -338,7 +338,7 @@
           <li class="nav-link link text-secondary display-4"
             style="color: #bdd7cb; font-weight: bold; padding: 5px; border: 2px solid #bdd7cb; border-radius: 10px; width: fit-content; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
 
-            <p id="countdown" style="font-size: 18px; margin: 0;">00:00</p>
+            <p id="countdown" style="font-size: 18px; margin: 0;"></p>
 
             <p style="font-size: 12px; margin: 0;">Corre, que te agarro!</p>
           </li>
@@ -512,7 +512,34 @@
     setInterval(updateCountdown, 1000);
     updateCountdown(); // Chamada inicial para evitar atraso de 1 segundo
   </script>
-     
+  <!--
+      <h1>Pódio dos Campeões 🏆</h1>
+    
+      <div class="podium">
+          <div class="place second">🥈</div>
+          <div class="place first">🥇</div>
+          <div class="place third">🥉</div>
+      </div>
+      
+      <button onclick="startAnimation()">🔄 Reiniciar Animação</button>
+  
+      <script>
+          function startAnimation() {
+              document.querySelector(".first").style.bottom = "100px";
+              document.querySelector(".second").style.bottom = "70px";
+              document.querySelector(".third").style.bottom = "50px";
+  
+              setTimeout(() => {
+                  document.querySelector(".first").style.bottom = "0px";
+                  document.querySelector(".second").style.bottom = "0px";
+                  document.querySelector(".third").style.bottom = "0px";
+              }, 2000);
+          }
+  
+          // Inicia a animação ao carregar a página
+          window.onload = startAnimation;
+      </script>
+      -->
   <section class="mbr-section content4 cid-sMyx2cmF8V" id="content4-I">
     <section class="container mb-5" style="font-family: 'Roboto', sans-serif; margin-top: -10px;">
       <div class="row align-center">
@@ -730,8 +757,9 @@
                 <li>Luís Miguel Gonçalves</li>
                 <li> Simão Martins </li>
                 <li>  Isabel Parreira </li>
-                <li> Luísa Parreira  </li> 
-                <li> Vivaldo Martins  </li> 
+                <li> Luísa Parreira  </li>
+                <li> Vivaldo Martins </li> 
+                <li> João Rodrigues  </li>
               </ul>
             </div>
           </div>
