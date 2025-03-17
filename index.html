@@ -162,6 +162,148 @@
       /* Adiciona rolagem interna se necessário */
       text-align: left;
     }
+
+    .podium {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 300px;
+            margin-top: 50px;
+        }
+
+        .place {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            position: relative;
+            bottom: -150px;
+            transition: bottom 1s ease-in-out, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .first { background: gold; height: 150px; }
+        .second { background: silver; height: 120px; }
+        .third { background: #cd7f32; height: 100px; }
+
+        .place:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #519c8f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #417e6d;
+        }
+
+        /* CARROSSEL */
+        #carouselExampleControls {
+            max-height: 590px;
+            overflow: hidden;
+        }
+
+        .carousel-img {
+            max-height: 650px;
+            object-fit: cover;
+        }
+
+        .user_image img {
+            border-radius: 50%;
+            vertical-align: middle;
+            height: 50px;
+        }
+
+        .btn {
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        a img:hover {
+            filter: brightness(90%);
+            transition: all .5s ease;
+        }
+
+        .pdf-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pdf-item a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .pdf-item a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-success {
+            background-color: rgb(0, 255, 30);
+        }
+
+        /* Contêiner do carrossel responsivo */
+        .opinions-carousel-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .opinions-carousel {
+            display: flex;
+            gap: 15px;
+            padding: 10px;
+            white-space: nowrap;
+            width: 100%;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .opinions-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .opinions-carousel .card {
+            min-width: 300px;
+            max-width: 350px;
+            background: white;
+            border-left: 4px solid #519c8f;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 0 0 auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .opinions-carousel .card p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            max-height: 100px;
+            overflow-y: auto;
+            text-align: left;
+        }
   </style>
 
 </head>
@@ -345,7 +487,7 @@
 
   <script>
     // Configuração da data para quando o contador chega a zero
-    const enrolStartDate = new Date("2025-04-01T00:00:00").getTime(); // Data da inscrição
+    const enrolStartDate = new Date("2025-04-06T00:00:00").getTime(); // Data da inscrição
 
     function updateCountdown() {
       const now = new Date().getTime(); // Obtém a data e hora atual
@@ -362,7 +504,7 @@
           `${days}D ${hours}H ${minutes}M`;
       } else {
         // Exibe a mensagem quando o tempo acabar
-        document.getElementById("countdown").innerHTML = "🎉 Inscrições Abertas!";
+        document.getElementById("countdown").innerHTML = "🎉 Dia da Prova!";
       }
     }
 
@@ -370,7 +512,7 @@
     setInterval(updateCountdown, 1000);
     updateCountdown(); // Chamada inicial para evitar atraso de 1 segundo
   </script>
-
+     
   <section class="mbr-section content4 cid-sMyx2cmF8V" id="content4-I">
     <section class="container mb-5" style="font-family: 'Roboto', sans-serif; margin-top: -10px;">
       <div class="row align-center">
@@ -589,6 +731,7 @@
                 <li> Simão Martins </li>
                 <li>  Isabel Parreira </li>
                 <li> Luísa Parreira  </li> 
+                <li> Vivaldo Martins  </li> 
               </ul>
             </div>
           </div>
