@@ -3,7 +3,7 @@
 
 <head>
   <!-- Google tag (gtag.js) -->
- 
+
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2CCMR92B46"></script>
   <script>
@@ -123,12 +123,11 @@
       overflow-x: auto;
       /* Permite rolagem horizontal */
       scroll-behavior: smooth;
-      /* Suaviza a rolagem */
       -webkit-overflow-scrolling: touch;
-      /* Permite deslizar com o dedo no mobile */
+
     }
 
-    /* Esconde a barra de rolagem */
+
     .opinions-carousel::-webkit-scrollbar {
       display: none;
     }
@@ -164,150 +163,158 @@
     }
 
     .podium {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            height: 300px;
-            margin-top: 50px;
-        }
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 300px;
+      margin-top: 50px;
+    }
 
-        .place {
-            width: 100px;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2em;
-            position: relative;
-            bottom: -150px;
-            transition: bottom 1s ease-in-out, transform 0.3s ease;
-            cursor: pointer;
-        }
+    .place {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      position: relative;
+      bottom: -150px;
+      transition: bottom 1s ease-in-out, transform 0.3s ease;
+      cursor: pointer;
+    }
 
-        .first { background: gold; height: 150px; }
-        .second { background: silver; height: 120px; }
-        .third { background: #cd7f32; height: 100px; }
+    .first {
+      background: gold;
+      height: 150px;
+    }
 
-        .place:hover {
-            transform: scale(1.1);
-        }
+    .second {
+      background: silver;
+      height: 120px;
+    }
 
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #519c8f;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
+    .third {
+      background: #cd7f32;
+      height: 100px;
+    }
 
-        button:hover {
-            background-color: #417e6d;
-        }
+    .place:hover {
+      transform: scale(1.1);
+    }
 
-        /* CARROSSEL */
-        #carouselExampleControls {
-            max-height: 590px;
-            overflow: hidden;
-        }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #519c8f;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
 
-        .carousel-img {
-            max-height: 650px;
-            object-fit: cover;
-        }
+    button:hover {
+      background-color: #417e6d;
+    }
 
-        .user_image img {
-            border-radius: 50%;
-            vertical-align: middle;
-            height: 50px;
-        }
+    /* CARROSSEL */
+    #carouselExampleControls {
+      max-height: 590px;
+      overflow: hidden;
+    }
 
-        .btn {
-            border-radius: 15px;
-            text-align: left;
-        }
+    .carousel-img {
+      max-height: 650px;
+      object-fit: cover;
+    }
 
-        a img:hover {
-            filter: brightness(90%);
-            transition: all .5s ease;
-        }
+    .user_image img {
+      border-radius: 50%;
+      vertical-align: middle;
+      height: 50px;
+    }
 
-        .pdf-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
+    .btn {
+      border-radius: 15px;
+      text-align: left;
+    }
 
-        .pdf-item a {
-            text-decoration: none;
-            color: #007bff;
-        }
+    a img:hover {
+      filter: brightness(90%);
+      transition: all .5s ease;
+    }
 
-        .pdf-item a:hover {
-            text-decoration: underline;
-        }
+    .pdf-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
 
-        .btn-success {
-            background-color: rgb(0, 255, 30);
-        }
+    .pdf-item a {
+      text-decoration: none;
+      color: #007bff;
+    }
 
-        /* Contêiner do carrossel responsivo */
-        .opinions-carousel-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            width: 100%;
-            position: relative;
-        }
+    .pdf-item a:hover {
+      text-decoration: underline;
+    }
 
-        .opinions-carousel {
-            display: flex;
-            gap: 15px;
-            padding: 10px;
-            white-space: nowrap;
-            width: 100%;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
+    .btn-success {
+      background-color: rgb(0, 255, 30);
+    }
 
-        .opinions-carousel::-webkit-scrollbar {
-            display: none;
-        }
+    /* Contêiner do carrossel responsivo */
+    .opinions-carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
 
-        .opinions-carousel .card {
-            min-width: 300px;
-            max-width: 350px;
-            background: white;
-            border-left: 4px solid #519c8f;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            flex: 0 0 auto;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    .opinions-carousel {
+      display: flex;
+      gap: 15px;
+      padding: 10px;
+      white-space: nowrap;
+      width: 100%;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
 
-        .opinions-carousel .card p {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            white-space: normal;
-            max-height: 100px;
-            overflow-y: auto;
-            text-align: left;
-      
-         }
+    .opinions-carousel::-webkit-scrollbar {
+      display: none;
+    }
 
+    .opinions-carousel .card {
+      min-width: 300px;
+      max-width: 350px;
+      background: white;
+      border-left: 4px solid #519c8f;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      flex: 0 0 auto;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
+    .opinions-carousel .card p {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+      max-height: 100px;
+      overflow-y: auto;
+      text-align: left;
 
+    }
   </style>
 
 </head>
@@ -411,41 +418,12 @@
     </a>
   </div>
 
-  <!-- 
 
-  <div class="container mb-5" style="font-family: 'Roboto', sans-serif; margin-top: -10px;">
-    <div class="row align-center">
-      <div class="col-12">
-        <a href="https://zoom.us/j/93280386498?pwd=aZLYYFUWuG2uDmbvWgUCbb4JBmKyrO.1">
-          <img src="assets/images/qrcodes/zoom_link.png" width="150">
-          <br>
-          <a class="btn btn-md btn-primary" href="https://zoom.us/j/93280386498?pwd=aZLYYFUWuG2uDmbvWgUCbb4JBmKyrO.1" role="button">Zoom Link</a>
-        </a>
-      </div>
-    </div>
-  
-    <div class="row align-center">
-      <div class="col-sm-6" >
-        <a href="https://www.menti.com/al5x751jowin">
-          <img src="assets/images/qrcodes/qa_painel1.png" width="150">
-          <br>
-          <a class="btn btn-md btn-primary" href="https://www.menti.com/al5x751jowin" role="button">QA - Painel 1</a>
-      </a>
-      </div>
-      <div class="col-sm-6">
-        <a href="https://www.menti.com/alx822t32x7m">
-          <img src="assets/images/qrcodes/qa_painel2.png" width="150">
-          <br>
-          <a class="btn btn-md btn-primary" href="https://www.menti.com/alx822t32x7m" role="button">QA - Painel 2</a>
-        
-        </a>
-      </div>
-    </div>
-  </div> -->
- 
-  <a class="weatherwidget-io" href="https://forecast7.com/pt/41d50n6d27/miranda-do-douro-municipality/" data-label_1="MIRANDA DO DOURO" data-label_2="Tempo" data-icons="Climacons Animated" data-theme="pool_table" >MIRANDA DO DOURO Tempo</a>
+  <a class="weatherwidget-io" href="https://forecast7.com/pt/41d50n6d27/miranda-do-douro-municipality/"
+    data-label_1="MIRANDA DO DOURO" data-label_2="Tempo" data-icons="Climacons Animated" data-theme="pool_table">MIRANDA
+    DO DOURO Tempo</a>
   <script>
-  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
   </script>
   <section class="mbr-section content4 cid-sMyx2cmF8V" id="content4-f">
     <div class="container mb-5" style="font-family: 'Roboto', sans-serif; margin-top: -10px; ">
@@ -491,7 +469,7 @@
       </div>
     </div>
   </section>
-  
+
 
   <script>
     // Configuração da data para quando o contador chega a zero
@@ -548,7 +526,7 @@
           window.onload = startAnimation;
       </script>
       -->
-      
+
   <section class="mbr-section content4 cid-sMyx2cmF8V" id="content4-I">
     <section class="container mb-5" style="font-family: 'Roboto', sans-serif; margin-top: -10px;">
       <div class="row align-center">
@@ -684,113 +662,135 @@
           </div>
         </div>
       </div>
-    
-     
-        <div class="text-center my-4">
-          <button class="btn btn-secondary" onclick="toggleLista()" style="background-color: #519c8f; border-color: #519c8f;">
-            Lista de Participantes
-          </button>
-        </div>
-      
-        <div id="listaParticipantes" class="row d-none justify-content-center" style="color: #519c8f;">
-          <div class="col-md-3 col-sm-6 p-3">
-            <div class="border p-3 h-100">
-              <strong>Listagem</strong>
-              <ul class="list-unstyled">
-                <li>Marta Fernandes</li>
-                <li>Ricardo Domingues</li>
-                <li>Elisa Fernandes</li>
-                <li>Cláudia Nascimento</li>
-                <li>Vítor Costa</li>
-                <li>Ana Cecília Mouro Neto</li>
-                <li>Gil Rafael</li>
-                <li>Nadia Sabino</li>
-                <li>Paula Anjos</li>
-                <li>Elisabete Pereira</li>
-                <li>Elisabete Pereira</li>
-                <li>Ana Afonso</li>
-                <li>Maria Augusta Vieira de Castro</li>
-                <li>Daniel João Augusto</li>
-              </ul>
-            </div>
-          </div>
-      
-          <div class="col-md-3 col-sm-6 p-3">
-            <div class="border p-3 h-100">
-              <strong>Listagem</strong>
-              <ul class="list-unstyled">
-              
-                <li>Maria da Luz Preto Fernandes Marcos</li>
-                <li>António Santos Marcos</li>
-                <li>Diogo Rodrigues</li>
-                <li>Guiomar Vale</li>
-                <li>Sara Gonçalves</li>
-                <li>Igor Rosete</li>
-                <li>Mª Otilia Gonçalves</li>
-                <li>Abdiel Gonçalves</li>
-                <li>Ana Sofia Alonso Alves</li>
-                <li>Catarina das Dores Vale</li>
-                <li>Henrique Sousa</li>
-                <li>Rosária Cardoso</li>
-                <li> Elisa Pires </li>
-              </ul>
-            </div>
-          </div>
-      
-          <div class="col-md-3 col-sm-6 p-3">
-            <div class="border p-3 h-100">
-              <strong>Listagem</strong>
-              <ul class="list-unstyled">
-                <li>Tomás Sousa</li>
-                <li>Maria Pimentel</li>
-                <li>João Afonso</li>
-                <li>Augusta Pires</li>
-                <li>Adriana de Oliveira</li>
-                <li>Sandra Mendes</li>
-                <li>Ana Cordeiro</li>
-                <li>Nikola</li>
-                <li>Fernanda Cordeiro</li>
-                <li>Orlando Ferreira</li>
-                <li>Luísa Rodrigues</li>
-                <li>Helder Rodrigues</li>
-                <li> Jocelino Rodrigues </li>
-                <li> Edite Rodrigues  </li>
-              </ul>
-            </div>
-          </div>
-      
-          <div class="col-md-3 col-sm-6 p-3">
-            <div class="border p-3 h-100">
-              <strong>Listagem</strong>
-              <ul class="list-unstyled">
-                <li>Idalina Rodrigues</li>
-                <li> Hélio Martins </li>
-                <li> Ana Guerra</li>
-                <li>Luís Miguel Gonçalves</li>
-                <li> Simão Martins </li>
-                <li>  Isabel Parreira </li>
-                <li> Luísa Parreira  </li>
-                <li> Vivaldo Martins </li> 
-                <li> João Rodrigues  </li>
-                 <li> Adérito Pires  </li>
-                 <li>Glória Pires  </li>
-                  <li>Daniela Pera </li>
-                  
-                
-              </ul>
-            </div>
-          </div>
-        </div>
-      
-        <script>
-          function toggleLista() {
-            var lista = document.getElementById('listaParticipantes');
-            lista.classList.toggle('d-none');
-          }
-        </script>
-        <br>
-      </section>
 
+
+      <div class="text-center my-4">
+        <button class="btn btn-secondary" onclick="toggleLista()"
+          style="background-color: #519c8f; border-color: #519c8f;">
+          Lista de Participantes
+        </button>
+      </div>
+      <div id="listaParticipantes" class="row d-none justify-content-center" style="color: #519c8f;">
+        <input type="text" id="searchInput" class="form-control my-2" placeholder="Pesquise o seu Nome..."
+          onkeyup="filtrarLista()">
+        <div class="col-md-3 col-sm-6 p-3">
+          <div class="border p-3 h-100">
+            <strong>Listagem</strong>
+            <ul class="list-unstyled">
+              <li class="participante">Marta Fernandes</li>
+              <li class="participante">Ricardo Domingues</li>
+              <li class="participante">Elisa Fernandes</li>
+              <li class="participante">Cláudia Nascimento</li>
+              <li class="participante">Vítor Costa</li>
+              <li class="participante">Ana Cecília Mouro Neto</li>
+              <li class="participante">Gil Rafael</li>
+              <li class="participante">Nadia Sabino</li>
+              <li class="participante">Paula Anjos</li>
+              <li class="participante">Elisabete Pereira</li>
+              <li class="participante">Ana Afonso</li>
+              <li class="participante">Maria Augusta Vieira de Castro</li>
+              <li class="participante">Daniel João Augusto</li>
+              <li class="participante">Maria Ortega</li>
+              <li class="participante">Andreia Igreja</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 p-3">
+          <div class="border p-3 h-100">
+            <strong>Listagem</strong>
+            <ul class="list-unstyled">
+              <li class="participante">Maria da Luz Preto Fernandes Marcos</li>
+              <li class="participante">António Santos Marcos</li>
+              <li class="participante">Diogo Rodrigues</li>
+              <li class="participante">Guiomar Vale</li>
+              <li class="participante">Sara Gonçalves</li>
+              <li class="participante">Igor Rosete</li>
+              <li class="participante">Mª Otilia Gonçalves</li>
+              <li class="participante">Abdiel Gonçalves</li>
+              <li class="participante">Ana Sofia Alonso Alves</li>
+              <li class="participante">Catarina das Dores Vale</li>
+              <li class="participante">Henrique Sousa</li>
+              <li class="participante">Rosária Cardoso</li>
+              <li class="participante">Elisa Pires</li>
+              <li class="participante">Diogo Faustino</li>
+              <li class="participante">Anaïs Fernandes</li>
+     
+              
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 p-3">
+          <div class="border p-3 h-100">
+            <strong>Listagem</strong>
+            <ul class="list-unstyled">
+              <li class="participante">Tomás Sousa</li>
+              <li class="participante">Maria Pimentel</li>
+              <li class="participante">João Afonso</li>
+              <li class="participante">Augusta Pires</li>
+              <li class="participante">Adriana de Oliveira</li>
+              <li class="participante">Sandra Mendes</li>
+              <li class="participante">Ana Cordeiro</li>
+              <li class="participante">Nikola</li>
+              <li class="participante">Fernanda Cordeiro</li>
+              <li class="participante">Orlando Ferreira</li>
+              <li class="participante">Luísa Rodrigues</li>
+              <li class="participante">Helder Rodrigues</li>
+              <li class="participante">Jocelino Rodrigues</li>
+              <li class="participante">Edite Rodrigues</li>
+              <li class="participante">Teodoro Cabreiro</li>
+              <li class="participante">Sandra Martins</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 p-3">
+          <div class="border p-3 h-100">
+            <strong>Listagem</strong>
+            <ul class="list-unstyled">
+              <li class="participante">Idalina Rodrigues</li>
+              <li class="participante">Hélio Martins</li>
+              <li class="participante">Ana Guerra</li>
+              <li class="participante">Luís Miguel Gonçalves</li>
+              <li class="participante">Simão Martins</li>
+              <li class="participante">Isabel Parreira</li>
+              <li class="participante">Luísa Parreira</li>
+              <li class="participante">Vivaldo Martins</li>
+              <li class="participante">João Rodrigues</li>
+              <li class="participante">Adérito Pires</li>
+              <li class="participante">Glória Pires</li>
+              <li class="participante">Daniela Pera</li>
+              <li class="participante">Teodoro Cabreiro </li>
+              <li class="participante">Vânia Cabreiro</li>
+              <li class="participante">Elton Igreja</li>
+            
+       
+      
+            </ul>
+          </div>
+        </div>
+      </div>
+     
+      <script>
+        function toggleLista() {
+          let lista = document.getElementById("listaParticipantes");
+          lista.classList.toggle("d-none");
+        }
+
+        function filtrarLista() {
+          let input = document.getElementById("searchInput").value.toLowerCase();
+          let participantes = document.querySelectorAll(".participante");
+
+          participantes.forEach(function (participante) {
+            let nome = participante.textContent.toLowerCase();
+            if (nome.includes(input)) {
+              participante.style.display = "";
+            } else {
+              participante.style.display = "none";
+            }
+          });
+        }
+      </script>
+    </section>
     <section class="mbr-section content4 cid-sMyx2cmF8V" id="content4-n">
       <div class="container">
         <div class="media-container-row justify-content-center text-center">
@@ -808,7 +808,7 @@
 
             <div id="opinions-list" style="margin-top: 30px;">
               <h3 style="color: #bdd1cb;">Comentários dos Visitantes</h3>
-              
+
 
               <!-- Contêiner do carrossel automático -->
               <div class="opinions-carousel-container">
@@ -816,7 +816,7 @@
                   <!-- As opiniões serão inseridas aqui -->
                 </div>
               </div>
-           </div>
+            </div>
           </div>
         </div>
       </div>
@@ -855,7 +855,6 @@
               </p>
 
             </div>
-
           </div>
           <!-- Right Column: Map -->
           <div class="col-12 col-md-6" style="text-align: center;">
@@ -868,8 +867,6 @@
         </div>
       </div>
     </section>
-
-
 
     <section once="footers" class="cid-sMzUwaETcR" id="footer6-2f">
       <div class="container">
@@ -885,15 +882,11 @@
               <a href="https://www.facebook.com/atletismomirandadodouro" target="_blank">
                 <img src="assets/images/Facebook_f_logo_(2019).svg" alt="Facebook" style="width: 40px; height: 40px;">
               </a>
-
-
             </div>
-
             <p class="mbr-text mb-0 mbr-fonts-style display-7">
               De Miranda do Douro para a ribalta do Atletismo.Corre, que te agarro❣️</p>
             <p class="mbr-text mb-0 mbr-fonts-style display-7"></p>
             © Copyright 2025 - Clube Desportivo de Miranda </p>
-
           </div>
         </div>
       </div>
@@ -931,8 +924,6 @@
     </div>
 
 </body>
-
-
 </html>
 <script type="module">
   // Importar Firebase
@@ -983,7 +974,7 @@
   // Função para carregar todas as opiniões do Firebase e mostrar no carrossel automático
   function loadOpinions() {
     const opinionsContainer = document.getElementById("opinions-container");
-    
+
 
     const opinionsRef = ref(database, 'opinions');
 
@@ -1024,75 +1015,75 @@
   // Carregar opiniões ao abrir a página
   loadOpinions();
   document.addEventListener("DOMContentLoaded", function () {
-  const carousel = document.querySelector(".opinions-carousel");
-  let isDragging = false;
-  let startX, scrollLeft, velocity = 0, raf;
+    const carousel = document.querySelector(".opinions-carousel");
+    let isDragging = false;
+    let startX, scrollLeft, velocity = 0, raf;
 
-  const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+    const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
 
-  if (!isMobile) {
-    // **PC - Navegação com Teclado e Mouse**
-    const easeScroll = () => {
-      if (Math.abs(velocity) < 0.1) return;
-      carousel.scrollLeft += velocity;
-      velocity *= 0.92; // Suavização da rolagem
-      raf = requestAnimationFrame(easeScroll);
-    };
+    if (!isMobile) {
+      // **PC - Navegação com Teclado e Mouse**
+      const easeScroll = () => {
+        if (Math.abs(velocity) < 0.1) return;
+        carousel.scrollLeft += velocity;
+        velocity *= 0.92; // Suavização da rolagem
+        raf = requestAnimationFrame(easeScroll);
+      };
 
-    carousel.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      carousel.style.cursor = "grabbing";
-      startX = e.pageX - carousel.offsetLeft;
-      scrollLeft = carousel.scrollLeft;
-      velocity = 0;
-      cancelAnimationFrame(raf);
-    });
+      carousel.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        carousel.style.cursor = "grabbing";
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+        velocity = 0;
+        cancelAnimationFrame(raf);
+      });
 
-    carousel.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      const x = e.pageX - carousel.offsetLeft;
-      const move = (x - startX) * 1;
-      carousel.scrollLeft = scrollLeft - move;
-      velocity = move - (scrollLeft - carousel.scrollLeft);
-    });
+      carousel.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const move = (x - startX) * 1;
+        carousel.scrollLeft = scrollLeft - move;
+        velocity = move - (scrollLeft - carousel.scrollLeft);
+      });
 
-    carousel.addEventListener("mouseup", () => {
-      isDragging = false;
-      carousel.style.cursor = "grab";
-      raf = requestAnimationFrame(easeScroll);
-    });
+      carousel.addEventListener("mouseup", () => {
+        isDragging = false;
+        carousel.style.cursor = "grab";
+        raf = requestAnimationFrame(easeScroll);
+      });
 
-    carousel.addEventListener("mouseleave", () => isDragging = false);
+      carousel.addEventListener("mouseleave", () => isDragging = false);
 
-    // **Mover com as setas do teclado**
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") {
-        carousel.scrollBy({ left: -200, behavior: "smooth" });
-      } else if (e.key === "ArrowRight") {
-        carousel.scrollBy({ left: 200, behavior: "smooth" });
-      }
-    });
-  } else {
-    // **Mobile - Navegação por Swipe**
-    carousel.addEventListener("touchstart", (e) => {
-      isDragging = true;
-      startX = e.touches[0].pageX - carousel.offsetLeft;
-      scrollLeft = carousel.scrollLeft;
-    }, { passive: true });
+      // **Mover com as setas do teclado**
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+          carousel.scrollBy({ left: -200, behavior: "smooth" });
+        } else if (e.key === "ArrowRight") {
+          carousel.scrollBy({ left: 200, behavior: "smooth" });
+        }
+      });
+    } else {
+      // **Mobile - Navegação por Swipe**
+      carousel.addEventListener("touchstart", (e) => {
+        isDragging = true;
+        startX = e.touches[0].pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      }, { passive: true });
 
-    carousel.addEventListener("touchmove", (e) => {
-      if (!isDragging) return;
-      const x = e.touches[0].pageX - carousel.offsetLeft;
-      const move = (x - startX) * 1.5;
-      carousel.scrollLeft = scrollLeft - move;
-    }, { passive: true });
+      carousel.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        const x = e.touches[0].pageX - carousel.offsetLeft;
+        const move = (x - startX) * 1.5;
+        carousel.scrollLeft = scrollLeft - move;
+      }, { passive: true });
 
-    carousel.addEventListener("touchend", () => {
-      isDragging = false;
-    });
-  }
-});
+      carousel.addEventListener("touchend", () => {
+        isDragging = false;
+      });
+    }
+  });
 
 
 </script>
