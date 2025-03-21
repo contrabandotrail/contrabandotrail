@@ -541,30 +541,37 @@
         </div>
       </div>
       <br>
-      <div class="col-12">
-        <h2 class="align-center pb-3 mbr-fonts-style display-2" style="color:  #bdd7cb;"> INSCRIÇÃO</h2>
-      </div>
-      <!--<div class="row align-center">
-        <div class="col-12">
-          <a href="#" onclick="alert('Em Manutenção, Tente Mais Tarde '); return false;" class="btn btn-primary" role="button">
-            🏃‍♂️ Vem Caminhar
-          </a>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var currentDate = new Date();
+          var cutoffDate = new Date("2025-03-31");
+
+          if (currentDate >= cutoffDate) {
+            document.getElementById("inscricao").innerHTML =
+              '<h2 class="align-center pb-3 mbr-fonts-style display-2" style="color: #bdd7cb;">INSCRIÇÃO</h2>' +
+              '<p class="align-center" style="font-size: 1.5em; color: #2d6a4f;">✅ Inscrições Esgotadas! ✅<br>' +
+              '🙏 Obrigado pelo entusiasmo, para o ano há mais!<br>' +
+              '🌿 Até lá, boas caminhadas e muitas aventuras! 🚶‍♂️🌄</p>';
+          }
+        });
+      </script>
+
+      <div id="inscricao" class="col-12">
+        <h2 class="align-center pb-3 mbr-fonts-style display-2" style="color: #bdd7cb;">INSCRIÇÃO</h2>
+        <div class="row align-center">
+          <div class="col-12">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYPkq3rlrRRC8oTbcU5QOeXxGsSvXwHIKn1UxBNw0eJEIPCQ/viewform?usp=header"
+              target="_blank" class="btn btn-primary" role="button">🏃‍♂️ Vem Caminhar</a>
+          </div>
         </div>
-      </div>-->
-      <div class="row align-center">
-        <div class="col-12">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYPkq3rlrRRC8oTbcU5QOeXxGsSvXwHIKn1UxBNw0eJEIPCQ/viewform?usp=header"
-            target="_blank" class="btn btn-primary" role="button">🏃‍♂️ Vem Caminhar</a>
+        <br>
+        <div class="row align-center">
+          <div class="col-12">
+            <a href="https://inscripciones.runvasport.es/inscripcion/iii-trail-contrabando-do-cafe/inscripcion_datos/"
+              target="_blank" class="btn btn-primary" role="button">🏃‍♂️ Vem Correr</a>
+          </div>
         </div>
-      </div>
-      <br>
-      <div class="row align-center">
-        <div class="col-12">
-          <a href="https://inscripciones.runvasport.es/inscripcion/iii-trail-contrabando-do-cafe/inscripcion_datos/"
-            target="_blank" class="btn btn-primary" role="button">🏃‍♂️ Vem Correr</a>
-        </div>
-      </div>
-      <br>
+        <br>
       </div>
     </section>
     <section class="mbr-section content4 cid-sMyx2cmF8V" id="content4-n">
@@ -692,6 +699,8 @@
               <li class="participante">Daniel João Augusto</li>
               <li class="participante">Maria Ortega</li>
               <li class="participante">Andreia Igreja</li>
+              <li class="participante">Amélia  pires</li>
+                                
             </ul>
           </div>
         </div>
@@ -714,9 +723,7 @@
               <li class="participante">Elisa Pires</li>
               <li class="participante">Diogo Faustino</li>
               <li class="participante">Anaïs Fernandes</li>
-     
-              
-              
+              <li class="participante"> Fátima cangueiro </li>
             </ul>
           </div>
         </div>
@@ -762,14 +769,14 @@
               <li class="participante">Teodoro Cabreiro </li>
               <li class="participante">Vânia Cabreiro</li>
               <li class="participante">Elton Igreja</li>
-            
-       
-      
+              <li class="participante"> Clarisse  pera</li>
+           
+
             </ul>
           </div>
         </div>
       </div>
-     
+
       <script>
         function toggleLista() {
           let lista = document.getElementById("listaParticipantes");
@@ -924,6 +931,7 @@
     </div>
 
 </body>
+
 </html>
 <script type="module">
   // Importar Firebase
