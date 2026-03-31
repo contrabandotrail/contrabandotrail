@@ -88,7 +88,7 @@ section{padding:6rem 2rem}
 .detail-val{font-size:1.1rem;color:var(--creme)}
 
 .precos{background:var(--terra)}
-.precos-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.precos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
 .preco-card{background:rgba(255,255,255,0.05);border:1px solid rgba(196,120,42,0.3);padding:2.5rem;position:relative;overflow:hidden}
 .preco-card.principal{border-color:var(--cobre);background:rgba(196,120,42,0.1)}
 .preco-card .tag{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cobre);margin-bottom:1rem;display:block}
@@ -111,7 +111,7 @@ section{padding:6rem 2rem}
 .inscricao .section-label{color:var(--terra);opacity:.6}
 .inscricao .section-title{color:var(--terra)}
 .inscricao .divider{background:var(--terra)}
-.ins-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
 .ins-card{background:rgba(44,24,16,0.15);padding:2rem;border:1px solid rgba(44,24,16,0.2);text-decoration:none;color:var(--terra);transition:all .2s;display:block}
 .ins-card:hover{background:rgba(44,24,16,0.28);transform:translateY(-3px)}
 .ins-icon{font-size:2rem;margin-bottom:1rem}
@@ -135,7 +135,7 @@ footer{background:var(--cafe);padding:2rem 2.5rem;display:flex;align-items:cente
 .footer-social a:hover{border-color:var(--areia);color:var(--creme)}
 
 @media(max-width:768px){
-  .apres-grid,.prova-hero,.precos-grid,.ins-grid,.contactos-grid{grid-template-columns:1fr}
+  .apres-grid,.prova-hero,.precos-grid,.ins-grid,.contactos-grid{grid-template-columns:1fr!important}
   .prova-big{font-size:clamp(5rem,20vw,8rem)}
   nav{padding:1rem 1.25rem}
   .nav-links{gap:1rem}
@@ -173,7 +173,7 @@ footer{background:var(--cafe);padding:2rem 2.5rem;display:flex;align-items:cente
       <span>Contrabando</span>
       do Café
     </h1>
-    <p class="hero-subtitle">Paradela · Miranda do Douro · Parque Natural do Douro Internacional</p>
+    <p class="hero-subtitle">Caminhada & Trail · Paradela · Miranda do Douro · Parque Natural do Douro Internacional</p>
 
     <div class="countdown-wrap">
       <div class="countdown" id="countdown">
@@ -188,8 +188,8 @@ footer{background:var(--cafe);padding:2rem 2.5rem;display:flex;align-items:cente
     </div>
 
     <div class="hero-cta">
-      <a class="btn-primary" href="#inscricao">Inscrever agora</a>
-      <a class="btn-outline" href="#prova">Ver a prova</a>
+      <a class="btn-primary" href="#inscricao">Vem caminhar — 20€</a>
+      <a class="btn-outline" href="#inscricao">Vem correr — 25€</a>
     </div>
   </div>
 
@@ -200,7 +200,7 @@ footer{background:var(--cafe);padding:2rem 2.5rem;display:flex;align-items:cente
 </section>
 
 <div class="alerta">
-  <p>⚠ Este ano existe apenas uma prova — Trail 18 km · 19 de Abril de 2026 · Vais ficar de fora?</p>
+  <p>🥾 Caminhada 20€ · Trail 18 km 25€ · 19 de Abril de 2026 · Paradela, Miranda do Douro</p>
 </div>
 
 <!-- APRESENTAÇÃO -->
@@ -255,8 +255,8 @@ footer{background:var(--cafe);padding:2rem 2.5rem;display:flex;align-items:cente
           <div class="desc">Participantes em 2025</div>
         </div>
         <div class="stat-box">
-          <div class="num">2 km</div>
-          <div class="desc">Da fronteira com Espanha</div>
+          <div class="num">Aberta</div>
+          <div class="desc">a todos · famílias e grupos</div>
         </div>
       </div>
     </div>
@@ -267,11 +267,15 @@ footer{background:var(--cafe);padding:2rem 2.5rem;display:flex;align-items:cente
 <section class="prova" id="prova">
   <div class="container">
     <div class="section-label">A Prova</div>
-    <h2 class="section-title">Um único desafio. Uma única chance.</h2>
+    <h2 class="section-title">Para todos. Do caminhante ao corredor.</h2>
     <div class="prova-hero">
       <div>
-        <div class="prova-big">18<small>km</small></div>
-        <div style="font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.15em;color:var(--areia);text-transform:uppercase;margin-top:1rem">Trail · Este ano, só há este percurso</div>
+        <div class="prova-big">≈12<small>km</small></div>
+        <div style="font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.15em;color:var(--cobre);text-transform:uppercase;margin-top:.5rem">★ Caminhada recreativa · destaque da edição</div>
+        <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(232,213,176,0.15)">
+          <div class="prova-big" style="font-size:clamp(3rem,8vw,6rem);color:var(--areia);opacity:.6">18<small>km</small></div>
+          <div style="font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.15em;color:rgba(232,213,176,0.5);text-transform:uppercase;margin-top:.5rem">Trail competitivo · gerido pela federação</div>
+        </div>
       </div>
       <div class="prova-details">
         <div class="detail-row">
@@ -314,15 +318,21 @@ footer{background:var(--cafe);padding:2rem 2.5rem;display:flex;align-items:cente
     <h2 class="section-title">Preços</h2>
     <div class="precos-grid">
       <div class="preco-card principal">
-        <span class="tag">Prova principal</span>
+        <span class="tag">★ Em destaque</span>
+        <div class="nome">Caminhada ≈12 km</div>
+        <div class="desc">Trilhos e caminhos de terra batida pelas paisagens das Arribas do Douro Internacional. Caráter recreativo e lúdico, aberta a todos — famílias, seniores, principiantes.</div>
+        <div class="valor">20€<span>inclui almoço</span></div>
+      </div>
+      <div class="preco-card">
+        <span class="tag">Trail competitivo</span>
         <div class="nome">Trail 18 km</div>
-        <div class="desc">O único percurso desta edição. Trilhos técnicos nas Arribas do Douro, com largada em Paradela.</div>
+        <div class="desc">Trilhos técnicos nas Arribas do Douro. Prova gerida pela federação via RunVasport.</div>
         <div class="valor">25€<span>inscrição na prova</span></div>
       </div>
       <div class="preco-card">
         <span class="tag">Opcional</span>
         <div class="nome">Refeição Acompanhante</div>
-        <div class="desc">Para quem vem apoiar, acompanhar ou simplesmente comer bem depois da prova.</div>
+        <div class="desc">Para quem vem apoiar, acompanhar ou simplesmente comer bem depois da festa.</div>
         <div class="valor">15€<span>refeição para acompanhante</span></div>
       </div>
     </div>
@@ -366,22 +376,23 @@ footer{background:var(--cafe);padding:2rem 2.5rem;display:flex;align-items:cente
     <h2 class="section-title">Inscrição</h2>
     <div class="divider"></div>
     <div class="ins-grid">
-      <a class="ins-card" href="https://inscripciones.runvasport.es/inscripcion/iii-trail-contrabando-do-cafe/inscripcion_datos/" target="_blank">
+      <a class="ins-card" href="https://docs.google.com/forms/d/e/1FAIpQLSchXQJYG32NhNaOGZmRwcGpD2MOXlYH9dsXZoeZ6t-JVXtEQQ/viewform" target="_blank">
+        <div class="ins-icon">🥾</div>
+        <div class="ins-title">Caminhada ≈12 km — 20€</div>
+        <div class="ins-desc">Inscrição para a caminhada recreativa. Inclui almoço. Aberta a todos — sem limite de idade ou condição física.</div>
+        <div class="ins-cta">★ Inscrever na caminhada →</div>
+      </a>
+      <a class="ins-card" href="https://inscripciones.runvasport.es/inscripcion/iv-trail-contrabando-do-cafe/?fbclid=IwY2xjawQ5Jb9leHRuA2FlbQIxMABzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEe_i0XYv6HHotnYmTmEjlZTWceVBm2aCuhru4r_BLn6_FrbnBk8Nmta9D1vy0_aem_wU3j590B6VfYGa7UNmiLlg" target="_blank">
         <div class="ins-icon">🏃</div>
         <div class="ins-title">Trail 18 km — 25€</div>
-        <div class="ins-desc">Inscrição para a prova via plataforma RunVasport. Inclui almoço no final da prova.</div>
+        <div class="ins-desc">Inscrição via RunVasport. Inclui almoço no final da prova.</div>
         <div class="ins-cta">Inscrever na corrida →</div>
       </a>
-      <a class="ins-card" href="https://docs.google.com/forms/d/e/1FAIpQLSchXQJYG32NhNaOGZmRwcGpD2MOXlYH9dsXZoeZ6t-JVXtEQQ/viewform" target="_blank">
-        <div class="ins-icon">🍽</div>
-        <div class="ins-title">Refeição Acompanhante — 20€</div>
-        <div class="ins-desc">Para quem vem apoiar e quer almoçar connosco no final da festa.</div>
-        <div class="ins-cta">Inscrever refeição →</div>
-      </a>
+
     </div>
     <div class="ins-urgencia">
-      <strong>Vais correr o risco de ficar de fora?</strong><br>
-      Este ano só existe uma prova e as vagas são limitadas. Inscreve-te já e vem viver este dia de festa na companhia dos que gostam do mesmo que tu.
+      <strong>Vais ficar de fora?</strong><br>
+      A caminhada é para todos — leva a família, os amigos, os vizinhos. Inscreve-te já e vem viver este dia de festa em Paradela na companhia dos que gostam do mesmo que tu.
     </div>
   </div>
 </section>
@@ -408,7 +419,7 @@ footer{background:var(--cafe);padding:2rem 2.5rem;display:flex;align-items:cente
       <div>
         <div style="margin-bottom:2rem">
           <div class="contact-label">Email</div>
-          <div class="contact-val"><a href="mailto:trailcontrabandocafe@gmail.com">trailcontrabandocafe@gmail.com</a></div>
+          <div class="contact-val"><a href="/cdn-cgi/l/email-protection#720600131b1e111d1c06001310131c161d1113141732151f131b1e5c111d1f"><span class="__cf_email__" data-cfemail="80f4f2e1e9ece3efeef4f2e1e2e1eee4efe3e1e6e5c0e7ede1e9ecaee3efed">[email&#160;protected]</span></a></div>
         </div>
         <div style="margin-bottom:2rem">
           <div class="contact-label">Redes Sociais</div>
@@ -430,26 +441,30 @@ footer{background:var(--cafe);padding:2rem 2.5rem;display:flex;align-items:cente
 </footer>
 
 <script>
-const target = new Date('2026-04-19T09:00:00');
-function update(){
-  const now = new Date();
-  const diff = target - now;
-  if(diff <= 0){
-    document.getElementById('countdown').innerHTML = '<div style="font-family:\'Bebas Neue\',sans-serif;font-size:2rem;color:var(--cobre);letter-spacing:.1em">A prova está a decorrer!</div>';
-    return;
-  }
-  const d = Math.floor(diff/86400000);
-  const h = Math.floor((diff%86400000)/3600000);
-  const m = Math.floor((diff%3600000)/60000);
-  const s = Math.floor((diff%60000)/1000);
-  document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-}
-update();
-setInterval(update,1000);
+    const target = new Date('2026-04-19T09:00:00');
+    function update(){
+      const now = new Date();
+      const diff = target - now;
+      const cdD = document.getElementById('cd-d');
+      const cdH = document.getElementById('cd-h');
+      const cdM = document.getElementById('cd-m');
+      const cdS = document.getElementById('cd-s');
+      if(!cdD) return;
+      if(diff <= 0){
+        document.getElementById('countdown').innerHTML = '<div style="font-family:\'Bebas Neue\',sans-serif;font-size:2rem;color:var(--cobre);letter-spacing:.1em">A prova está a decorrer!</div>';
+        return;
+      }
+      const d = Math.floor(diff/86400000);
+      const h = Math.floor((diff%86400000)/3600000);
+      const m = Math.floor((diff%3600000)/60000);
+      const s = Math.floor((diff%60000)/1000);
+      cdD.textContent = String(d).padStart(2,'0');
+      cdH.textContent = String(h).padStart(2,'0');
+      cdM.textContent = String(m).padStart(2,'0');
+      cdS.textContent = String(s).padStart(2,'0');
+    }
+    window.addEventListener('load', function(){
+      update();
+      setInterval(update, 1000);
+    });
 </script>
-
-</body>
-</html>
